@@ -46,10 +46,8 @@ jobs:
     # This step installs dependencies
     # TODO: Replace the run block, using `uv` to sync the environment
     - name: Install dependencies
-      run: uv
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      run: uv sync
+
 
     # This step runs unit tests with pytest
     # TODO: Update the run block. Use: uv run -m pytest
